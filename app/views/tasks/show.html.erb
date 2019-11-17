@@ -1,2 +1,31 @@
-  <h2><%= @task.title %></h2>
-  <p><%= @task.details %></p>
+<div class="container">
+  <div class="border m-3 p-3">
+     <h2> <%= @task.title %> </h2>
+  </div>
+
+  <div class="border m-3 p-3">
+    <p> <%= @task.details %> </p>
+  </div>
+
+  <div class="border m-3 p-3">
+    <% if @task.completed %>
+      <i class="fa fa-check-square-o"></i> Complete
+    <% else %>
+      <i class="fa fa-square-o"></i> Incomplete
+    <% end %>
+  </div>
+
+  <div class="d-flex justify-content-around border m-3 p-3">
+    <%= link_to tasks_path do %>
+    <i class="fa fa-history"></i> Back to tasks
+    <% end %>
+
+    <%= link_to edit_task_path(@task.id) do %>
+    Edit Task
+    <% end %>
+
+  </div>
+
+</div>
+
+
